@@ -1,0 +1,224 @@
+.arquivo-seguro {
+  padding: 8rem 0 10rem 0;
+  .conteudo-arquivo {
+    @include flex-center(center, 3rem);
+
+    .texto-arquivo {
+      max-width: 53.6rem;
+      @include flex-center(center, 2rem);
+      flex-flow: column;
+
+      .formulario {
+        max-width: 48rem;
+        @include flex-center(center, 2rem);
+        align-self: stretch;
+        justify-content: space-between;
+
+        & > div {
+          flex: 1;
+          position: relative;
+          input {
+            width: 100%;
+            height: 4.4rem;
+            padding: 1.4rem 1rem;
+            outline: none;
+            border: 1px solid black;
+            border-radius: 5px;
+
+            &:valid {
+              border-color: green;
+            }
+
+          
+          }
+
+    
+        }
+      }
+    }
+  }
+
+  @include responsivo("tablet") {
+    .conteudo-arquivo {
+      flex-flow: column;
+
+      .texto-arquivo {
+        text-align: center;
+        max-width: 100%;
+
+        h1 {
+          font-size: 2.6rem;
+        }
+
+        .formulario {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  @include responsivo("mobile") {
+    .conteudo-arquivo {
+      flex-flow: column-reverse;
+
+      .formulario {
+        width: 100%;
+        flex-flow: column;
+
+        align-items: stretch;
+
+        & > div {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.Mantenha-se-produtivo {
+  position: relative;
+  margin-top: 12rem;
+  background-color: #f8f8fe;
+  padding-block: 8rem;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 15rem;
+    display: block;
+    position: absolute;
+    top: -114px;
+    left: 0;
+    background: url(../images/bg-curve-desktop.svg) no-repeat;
+    z-index: -1;
+  }
+  .conteudo-produtivo {
+    @include flex-center(flex-start, 3rem);
+    .texto {
+      flex: 1;
+      @include flex-center(flex-start, 3rem);
+      flex-flow: column;
+      max-width: 60rem;
+
+      a {
+        @include flex-center(center, 1rem);
+        vertical-align: bottom;
+        color: $color-link;
+        border-bottom: 1px solid $color-link;
+        transition: opacity 0.3s ease-in;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      .avaliacao {
+        width: 40rem;
+        padding: 2.4rem;
+        background-color: #ffff;
+        border-radius: 5px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+        p {
+          max-width: 32.6rem;
+          margin-bottom: 3rem;
+          &::before {
+            content: url(../images/icon-quotes.svg);
+            display: block;
+            margin-bottom: 1rem;
+          }
+        }
+        .perfil {
+          @include flex-center(center, 1rem);
+          img {
+            border-radius: 50%;
+            width: 4.5rem;
+            height: 4.5rem;
+          }
+          span {
+            font-family: $fonte-secundaria;
+            font-weight: 700;
+          }
+
+          & > div {
+            @include flex-center(flex-start, 0.2rem);
+            flex-flow: column;
+          }
+        }
+      }
+    }
+    picture {
+      flex: 1;
+    }
+  }
+
+  @include responsivo("notbooks") {
+    .conteudo-produtivo {
+      flex-flow: column;
+
+      .texto {
+        text-align: center;
+        align-items: center;
+        max-width: 100%;
+      }
+    }
+  }
+  @include responsivo("mobile") {
+    .conteudo-produtivo {
+      flex-flow: column-reverse;
+
+      .texto {
+        .avaliacao {
+          width: 100%;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.acesso-total {
+  background-color: $bg-color-acesso;
+  padding-block: 9rem;
+
+  .conteudo-acesso {
+    @include flex-center(flex-start, 1rem);
+    justify-content: space-between;
+    .texto-acesso {
+      max-width: 50rem;
+      @include flex-center(flex-start, 2rem);
+      flex-flow: column;
+      p {
+        color: #ffff;
+      }
+    }
+  }
+
+  .formulario-acesso {
+    width: 45rem;
+    @include flex-center(stretch, 1rem);
+    justify-content: center;
+    flex-flow: column;
+    input {
+      width: 100%;
+      height: 4.4rem;
+      padding: 1.4rem 1rem;
+      outline: none;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+  }
+
+  @include responsivo("notbooks") {
+    .conteudo-acesso {
+      text-align: center;
+      flex-flow: column;
+      align-items: center;
+      gap: 3rem;
+      .texto-acesso {
+        align-items: center;
+      }
+    }
+  }
+  @include responsivo("mobile") {
+    .formulario-acesso {
+      width: 100%;
+    }
+  }
+}

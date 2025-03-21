@@ -1,0 +1,29 @@
+@mixin flex-center($alinhamento ,$gap) {
+  display: flex;
+  align-items: $alinhamento;
+  gap: $gap;
+}
+
+
+
+ // criar os midias
+$breakpoints: (
+  "notbooks": 1200px,
+  "tablet": 991px,
+  "mobile": 560px,
+);
+
+
+
+
+@mixin responsivo($breakpoints-name) {
+  @if map-has-key($breakpoints, $breakpoints-name) {
+   
+    @media (max-width: map-get($breakpoints ,$breakpoints-name)){
+      @content
+    }
+    
+  } @else {
+    @warn "este breakpoint não existe";
+  }
+}

@@ -1,0 +1,33 @@
+.btn-primario {
+  align-content: unset;
+  cursor: pointer;
+  width: 160px;
+  padding: 1.4rem 2rem;
+  color: #ffff;
+  background-color: $bg-color-btn;
+  font-family: $fonte-secundaria;
+  font-weight: 700;
+  border: 0;
+  transition: opacity 0.3s ease-in;
+  border-radius: 5px;
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.md {
+    width: 18.0rem;
+  }
+
+
+  @include responsivo("mobile") {
+    
+    width: 100%;
+    
+    &.md {
+      width: 100%;
+    }
+
+  }
+
+
+}

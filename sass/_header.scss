@@ -1,0 +1,69 @@
+header {
+  margin-top: 6rem;
+
+  .cabecalho-conteudo {
+    @include flex-center(center, 2rem);
+    justify-content: space-between;
+
+    .logo {
+      max-width: 16rem;
+    }
+
+    .navegacao {
+      .lista {
+        @include flex-center(center, 3.5rem);
+
+        li {
+          &:not(:last-child) {
+            margin-right: 2rem;
+          }
+
+          &:hover {
+            a {
+              color: $bg-color-btn;
+            }
+          }
+        }
+
+        a {
+          font-weight: 400;
+          color: $texto-cor;
+          transition: color 0.3s ease;
+        }
+      }
+    }
+  }
+
+  @include responsivo("tablet") {
+    .cabecalho-conteudo {
+
+      .logo {
+        width: 10.0rem;
+      }
+    }
+
+  }
+
+ 
+  @include responsivo("mobile") {
+  .cabecalho-conteudo {
+    .logo {
+      max-width: 9.0rem;
+
+    }
+
+    .navegacao {
+
+      .lista {
+        gap: 2.0rem;
+        
+        li {
+          &:not(:last-child) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  }
+}
